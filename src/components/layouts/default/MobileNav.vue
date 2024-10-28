@@ -69,7 +69,7 @@
                 'text-surface-0 bg-primary-500 dark:bg-primary-400 dark:text-surface-800 duration-150':
                   $route.path === link.to,
               }"
-              @click.prevent="$router.push(link.to)"
+              @click.prevent="changePage(link.to)"
             >
               <span>{{ link.label }}</span>
               <i :class="link.icon" />
@@ -108,6 +108,7 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import { useLang } from '../../../composables/useLang';
 import { useTheme } from '../../../composables/useTheme';
 import { useLayoutStore, navLinkGroups } from '../../../stores/layout';
@@ -116,6 +117,13 @@ const layoutStore = useLayoutStore();
 
 const { isDark, toggle } = useTheme();
 const { switchLang } = useLang();
+
+const router = useRouter();
+
+function changePage(to) {
+  router.push(to);
+  layoutStore.closeMobileNav();
+}
 </script>
 
 <style scoped>
