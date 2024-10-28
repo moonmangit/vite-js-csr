@@ -7,12 +7,13 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, shallowRef, watch } from 'vue';
 import DefaultLayout from './components/layouts/DefaultLayout.vue';
 import BlankLayout from './components/layouts/BlankLayout.vue';
 import { useRoute } from 'vue-router';
+import { useLang } from './composables/useLang';
 
-const activeLayout = ref(DefaultLayout);
+const activeLayout = shallowRef(DefaultLayout);
 const blankLayoutPaths = ['/login']; // <- Add your paths here
 const route = useRoute();
 
@@ -24,4 +25,9 @@ watch(
       : DefaultLayout;
   },
 );
+
+const { init: initLang } = useLang();
+onMounted(() => {
+  initLang();
+});
 </script>

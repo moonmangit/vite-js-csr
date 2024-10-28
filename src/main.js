@@ -2,15 +2,31 @@ import './style.css';
 import App from './App.vue';
 
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import { createRouter, createWebHistory } from 'vue-router';
+
+import { createI18n } from 'vue-i18n';
+import EN from './locales/en.json';
+import TH from './locales/th.json';
 
 import Primevue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Button from 'primevue/button';
 import { definePreset } from '@primevue/themes';
-import { createPinia } from 'pinia';
 
 const app = createApp(App);
+
+// i18n
+const i18n = createI18n({
+  locale: 'en',
+  availableLocales: ['en', 'th'],
+  fallbackFormat: 'en',
+  messages: {
+    en: EN,
+    th: TH,
+  },
+});
+app.use(i18n);
 
 // router
 const router = createRouter({
