@@ -8,6 +8,7 @@ import Primevue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Button from 'primevue/button';
 import { definePreset } from '@primevue/themes';
+import { createPinia } from 'pinia';
 
 const app = createApp(App);
 
@@ -89,6 +90,10 @@ app.use(Primevue, {
   ripple: true,
 });
 app.component('PButton', Button);
+
+// pinia
+const pinia = createPinia();
+app.use(pinia);
 
 // mount
 app.mount('#app');
