@@ -1,6 +1,6 @@
 <template>
   <div>
-    home page
+    home page [{{ $testStates.data }}]
     <form>
       <label for="locale-select">{{ $t('language') }}: </label>
       <select
@@ -29,9 +29,11 @@
 <script setup>
 import { useLang } from '../../../composables/useLang';
 import { useTheme } from '../../../composables/useTheme';
+import { useTestStore } from '../../../stores/test';
 
 const { switchLang } = useLang();
 const { currentTheme, setByName } = useTheme();
+const { $state: $testStates } = useTestStore();
 </script>
 
 <style></style>
