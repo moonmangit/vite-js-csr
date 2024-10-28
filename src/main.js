@@ -18,11 +18,20 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('./pages/home/HomePage.vue'),
+      component: () => import('./components/pages/home/HomePage.vue'),
     },
     {
       path: '/about',
-      component: () => import('./pages/about/AboutPage.vue'),
+      component: () => import('./components/pages/about/AboutPage.vue'),
+    },
+    {
+      path: '/login',
+      component: () => import('./components/pages/login/LoginPage.vue'),
+    },
+    // unknown route
+    {
+      path: '/:pathMatch(.*)*',
+      component: () => import('./components/pages/NotFoundPage.vue'),
     },
   ],
 });
