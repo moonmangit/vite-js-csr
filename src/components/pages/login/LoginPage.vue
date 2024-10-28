@@ -28,14 +28,15 @@
     </nav>
 
     <main
-      class="border border-surface-300 dark:border-surface-700 p-5 rounded-xl w-[min(500px,95dvw)] mx-auto shadow-xl dark:shadow-none dark:bg-surface-800"
+      class="border border-surface-300 dark:border-surface-700 p-5 rounded-xl w-[min(400px,95dvw)] mx-auto shadow-xl dark:shadow-none dark:bg-surface-800"
     >
       <form class="space-y-8">
         <section>
-          <h1 class="text-2xl font-bold text-surface-700 dark:text-surface-0">
-            Foo System Administration
-          </h1>
           <p class="text-sm">login to continue</p>
+          <h1 class="text-2xl font-bold text-surface-700 dark:text-surface-0">
+            Foo System
+          </h1>
+          <p class="text-sm">Administration</p>
         </section>
 
         <section class="space-y-3">

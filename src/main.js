@@ -15,6 +15,7 @@ import Aura from '@primevue/themes/aura';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import ToggleSwitch from 'primevue/toggleswitch';
+import TieredMenu from 'primevue/tieredmenu';
 import Select from 'primevue/select';
 import { definePreset } from '@primevue/themes';
 
@@ -122,6 +123,7 @@ app.component('PButton', Button);
 app.component('PInputText', InputText);
 app.component('PToggleSwitch', ToggleSwitch);
 app.component('PSelect', Select);
+app.component('PTieredMenu', TieredMenu);
 
 // pinia
 const pinia = createPinia();

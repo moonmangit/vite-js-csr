@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-surface-0 text-surface-700 dark:text-surface-300 dark:bg-surface-900 w-screen h-screen"
+    class="bg-surface-0 text-surface-700 dark:text-surface-300 dark:bg-surface-900 w-screen h-screen duration-150"
   >
     <component :is="activeLayout">
       <RouterView />
@@ -10,7 +10,7 @@
 
 <script setup>
 import { onMounted, shallowRef, watch } from 'vue';
-import DefaultLayout from './components/layouts/DefaultLayout.vue';
+import DefaultLayout from './components/layouts/default/DefaultLayout.vue';
 import BlankLayout from './components/layouts/BlankLayout.vue';
 import { useRoute } from 'vue-router';
 import { useLang } from './composables/useLang';
