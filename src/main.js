@@ -1,4 +1,5 @@
 import './style.css';
+import 'primeicons/primeicons.css';
 import App from './App.vue';
 
 import { createApp } from 'vue';
@@ -12,6 +13,9 @@ import TH from './locales/th.json';
 import Primevue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Button from 'primevue/button';
+import InputText from 'primevue/inputtext';
+import ToggleSwitch from 'primevue/toggleswitch';
+import Select from 'primevue/select';
 import { definePreset } from '@primevue/themes';
 
 const app = createApp(App);
@@ -115,6 +119,9 @@ app.use(Primevue, {
   ripple: true,
 });
 app.component('PButton', Button);
+app.component('PInputText', InputText);
+app.component('PToggleSwitch', ToggleSwitch);
+app.component('PSelect', Select);
 
 // pinia
 const pinia = createPinia();

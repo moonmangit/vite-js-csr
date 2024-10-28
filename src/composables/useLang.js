@@ -8,6 +8,7 @@ export function useLang() {
   const isInit = ref(false);
   const { locale, availableLocales } = useI18n();
   const ls = useLocalStorage('lang', DEFAULT_LANG_CODE);
+
   function init() {
     if (isInit.value) return;
     locale.value = ls.value;
@@ -21,6 +22,7 @@ export function useLang() {
       ls.value = target;
     }
   }
+
   return {
     init,
     switchLang,

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-surface-0 text-surface-700 dark:text-surface-0 dark:bg-surface-800 w-screen h-screen"
+    class="bg-surface-0 text-surface-700 dark:text-surface-300 dark:bg-surface-900 w-screen h-screen"
   >
     <component :is="activeLayout">
       <RouterView />

@@ -12,35 +12,33 @@ export function useTheme() {
 
   function init() {
     if (isDark.value) {
-      document.body.classList.add(BODY_DARK_MODE_CLASS);
+      document.documentElement.classList.add(BODY_DARK_MODE_CLASS);
     } else {
-      document.body.classList.remove(BODY_DARK_MODE_CLASS);
+      document.documentElement.classList.remove(BODY_DARK_MODE_CLASS);
     }
     isInit.value = true;
   }
 
   function toggle() {
     if (isDark.value) {
-      document.body.classList.remove(BODY_DARK_MODE_CLASS);
+      document.documentElement.classList.remove(BODY_DARK_MODE_CLASS);
     } else {
-      document.body.classList.add(BODY_DARK_MODE_CLASS);
+      document.documentElement.classList.add(BODY_DARK_MODE_CLASS);
     }
     isDark.value = !isDark.value;
   }
 
   function setToDark() {
-    document.body.classList.add(BODY_DARK_MODE_CLASS);
+    document.documentElement.classList.add(BODY_DARK_MODE_CLASS);
     isDark.value = true;
   }
 
   function setToLight() {
-    document.body.classList.remove(BODY_DARK_MODE_CLASS);
+    document.documentElement.classList.remove(BODY_DARK_MODE_CLASS);
     isDark.value = false;
   }
 
   function setByName(value) {
-    console.log(value);
-
     if (value === DARK_VALUE) {
       setToDark();
     } else if (value === LIGHT_VALUE) {
